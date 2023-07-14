@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles/App.css';
 import { Heading, ListItem, UnorderedList } from '@chakra-ui/react';
 
-export function App() {
+export const App: React.FC = () => {
   return (
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
       <Heading>Welcome to Flowlish</Heading>

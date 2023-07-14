@@ -2,9 +2,10 @@ import { Auth } from '@supabase/auth-ui-react';
 import {Navigate} from 'react-router-dom';
 import supabase from '../services/supabase-api-config'
 import { useState, useEffect } from 'react'
+import { Session } from '@supabase/supabase-js'
 
 const SignIn: React.FC = () => {
-  const [session, setSession] = useState(null)
+  const [session, setSession] = useState<Session | null>(null)
   
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
