@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 
 const defaultEnvConfig = {
   VITE_SUPABASE_URL: '',
-  VITE_APP_ANON_KEY: ''
+  VITE_APP_ANON_KEY: '',
 }
 
 const envConfig = {...defaultEnvConfig, ...import.meta.env }

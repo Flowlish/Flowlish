@@ -1,25 +1,16 @@
-import { useState, useEffect } from 'react'
-import supabase from '../services/supabase-api-config'
-import Main from '../components/main'
-import SignIn from '../components/sign-in'
+
+import { Link } from 'react-router-dom';
 import './styles/App.css';
+import { Heading, ListItem, UnorderedList } from '@chakra-ui/react';
 
 export function App() {
-  const [session, setSession] = useState(null)
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
-  }, [])
-
   return (
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
-      {!session ? <SignIn /> : <Main />}
+      <Heading>Welcome to Flowlish</Heading>
+      <UnorderedList styleType="none">
+        <ListItem><Link to="/signin"><h1>Sign In</h1></Link></ListItem>
+        <ListItem><Link to="/dashboard"><h1>Dashboard</h1></Link></ListItem>
+      </UnorderedList>
     </div>
-  )
+  );
 }
