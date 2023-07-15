@@ -30,6 +30,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'linebreak-style': 'on',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
