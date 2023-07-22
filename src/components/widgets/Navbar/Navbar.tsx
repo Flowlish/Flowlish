@@ -25,7 +25,7 @@ const End = ({ children }: { children: ReactNode }) => {
 
 const Navbar = ({ children }: NavbarProps) => {
   return (
-    <Flex width="full" justify="space-between" padding="0.5rem" borderBottom="2px" borderColor="gray.300">
+    <Flex width="full" justify="space-between" padding="0.5rem" borderBottom="2px" borderColor="gray.200">
       {children}
     </Flex>
   )

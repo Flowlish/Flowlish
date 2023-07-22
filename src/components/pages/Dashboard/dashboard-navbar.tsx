@@ -1,8 +1,8 @@
 import Navbar from '@/components/widgets/Navbar/Navbar'
-import { Input, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { Input, Menu, MenuButton, MenuList, MenuItem, MenuCommand } from '@chakra-ui/react'
 import { Avatar } from '@chakra-ui/react'
 import { useSession } from '@/hooks/useSession'
-import { Settings, Bell } from 'lucide-react'
+import { Settings, Bell, MenuSquare } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import supabase from '@/services/supabase-api-config'
 
@@ -15,6 +15,11 @@ export const DashboardNavbar = () => {
     navigate('/signin');
   }
 
+  const userName = user?.user_metadata.name
+  // const userEmail = user?.user_metadata.email
+  const userAvatar = user?.user_metadata.avatar_url
+  
+
   return (
     <Navbar>
       <Navbar.Start>
@@ -25,7 +30,7 @@ export const DashboardNavbar = () => {
         <Bell />
         <Menu>
           <MenuButton>
-            <Avatar name={user?.email} />
+            <Avatar name={userName} src={userAvatar}/>
           </MenuButton>
           <MenuList>
             <MenuItem onClick={handleSignOut}>
