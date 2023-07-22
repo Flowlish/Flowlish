@@ -4,7 +4,7 @@ import { DashboardSidebar } from './dashboard-sidebar';
 
 const style = {
   display: "flex",
-  height: "100vh"
+  height: "100%"
 }
 
 const DashBoard: React.FC = () => {
@@ -12,7 +12,8 @@ const DashBoard: React.FC = () => {
     <RouteGuard>
       <div style={style}>
         <div style={{
-          flexBasis: "20%"
+          flexBasis: "20%",
+          height: "100%"
         }}>
           <DashboardSidebar />
         </div>

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 export const App: React.FC = () => {
   return (
-    <Box minHeight="100vh">
+    <Box minHeight="100%">
       <Outlet />
     </Box>
   );
